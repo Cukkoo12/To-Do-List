@@ -69,5 +69,27 @@ namespace To_Do_List
                 MessageBox.Show("Lütfen silmek istediğiniz öğeyi seçiniz.");
             }
         }
+
+        private void temizle_Click(object sender, EventArgs e)
+        {
+            for (int i = liste.Items.Count-1; i >=0; i--)
+            {
+                if (liste.GetItemChecked(i) == true)
+                {
+                    liste.Items.RemoveAt(i);
+                }
+            }
+            if (liste.Items.Count == 0)
+            {
+                MessageBox.Show("Liste boş.");
+            }
+            verilerikaydet();
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            saat.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
     }
 }

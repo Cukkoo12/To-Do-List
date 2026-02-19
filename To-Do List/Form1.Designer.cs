@@ -28,20 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.liste = new System.Windows.Forms.ListBox();
+            this.components = new System.ComponentModel.Container();
             this.metin = new System.Windows.Forms.TextBox();
             this.ekle = new System.Windows.Forms.Button();
             this.sil = new System.Windows.Forms.Button();
+            this.liste = new System.Windows.Forms.CheckedListBox();
+            this.temizle = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.saat = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // liste
-            // 
-            this.liste.FormattingEnabled = true;
-            this.liste.ItemHeight = 16;
-            this.liste.Location = new System.Drawing.Point(12, 12);
-            this.liste.Name = "liste";
-            this.liste.Size = new System.Drawing.Size(318, 340);
-            this.liste.TabIndex = 0;
             // 
             // metin
             // 
@@ -70,15 +65,51 @@
             this.sil.UseVisualStyleBackColor = true;
             this.sil.Click += new System.EventHandler(this.sil_Click);
             // 
+            // liste
+            // 
+            this.liste.FormattingEnabled = true;
+            this.liste.Location = new System.Drawing.Point(4, 12);
+            this.liste.Name = "liste";
+            this.liste.Size = new System.Drawing.Size(326, 344);
+            this.liste.TabIndex = 3;
+            // 
+            // temizle
+            // 
+            this.temizle.Location = new System.Drawing.Point(100, 415);
+            this.temizle.Name = "temizle";
+            this.temizle.Size = new System.Drawing.Size(130, 23);
+            this.temizle.TabIndex = 4;
+            this.temizle.Text = "Temizle";
+            this.temizle.UseVisualStyleBackColor = true;
+            this.temizle.Click += new System.EventHandler(this.temizle_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // saat
+            // 
+            this.saat.AutoSize = true;
+            this.saat.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.saat.Location = new System.Drawing.Point(621, 9);
+            this.saat.Name = "saat";
+            this.saat.Size = new System.Drawing.Size(91, 39);
+            this.saat.TabIndex = 5;
+            this.saat.Text = "Saat";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.saat);
+            this.Controls.Add(this.temizle);
+            this.Controls.Add(this.liste);
             this.Controls.Add(this.sil);
             this.Controls.Add(this.ekle);
             this.Controls.Add(this.metin);
-            this.Controls.Add(this.liste);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -87,11 +118,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox liste;
         private System.Windows.Forms.TextBox metin;
         private System.Windows.Forms.Button ekle;
         private System.Windows.Forms.Button sil;
+        private System.Windows.Forms.CheckedListBox liste;
+        private System.Windows.Forms.Button temizle;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label saat;
     }
 }
 
