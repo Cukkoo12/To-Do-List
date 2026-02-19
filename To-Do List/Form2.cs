@@ -16,14 +16,25 @@ namespace To_Do_List
         public Form2()
         {
             InitializeComponent();
+            HesaplariListele();
         }
-
+        private void HesaplariListele()
+        {
+            hesapListesi.Items.Clear();
+            string[] dosyalar = Directory.GetFiles(Directory.GetCurrentDirectory(), "*_sifre.txt");
+            foreach (string dosya in dosyalar)
+            {
+                FileInfo dosyaFile = new FileInfo(dosya);
+                string kullaniciAdi = dosyaFile.Name.Replace("_sifre.txt", "");
+                hesapListesi.Items.Add(kullaniciAdi);
+            }
+        }
         private void giris_Click(object sender, EventArgs e)
         {
             bool girisBasarili = false;
-            if (File.Exists(kullaniciAdi.Text + ".txt"))
+            if (File.Exists(kullaniciAdi.Text + "_sifre.txt"))
             {
-                string[] kayitlar = File.ReadAllLines(kullaniciAdi.Text + ".txt");
+                string[] kayitlar = File.ReadAllLines(kullaniciAdi.Text + "_sifre.txt");
                 foreach (string kayit in kayitlar)
                 {
                     string[] parcalar = kayit.Split('|');
@@ -34,7 +45,8 @@ namespace To_Do_List
                     }
                 }
             }
-            if (girisBasarili) {
+            if (girisBasarili)
+            {
                 Form1 form1 = new Form1(kullaniciAdi.Text);
                 form1.Show();
                 form1.FormClosed += (s, args) => this.Show();
@@ -49,9 +61,10 @@ namespace To_Do_List
         {
             if (kullaniciAdi.Text != "" && sifre.Text != "")
             {
-                string kayitVerisi = kullaniciAdi.Text +"|"+sifre.Text+"\n";
-                File.AppendAllLines(kullaniciAdi.Text + ".txt", new[] { kayitVerisi });
+                string kayitVerisi = kullaniciAdi.Text + "|" + sifre.Text + "\n";
+                File.AppendAllLines(kullaniciAdi.Text + "_sifre.txt", new[] { kayitVerisi });
                 MessageBox.Show("Kayıt başarılı! Artık giriş yapabilirsiniz.");
+                HesaplariListele();
             }
             else
             {
@@ -69,7 +82,8 @@ namespace To_Do_List
 
         private void kullaniciAdi_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) {
+            if (e.KeyCode == Keys.Enter)
+            {
                 e.SuppressKeyPress = true;
                 giris_Click(sender, e);
             }
@@ -84,6 +98,48 @@ namespace To_Do_List
             else
             {
                 sifre.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void hesapSil_Click(object sender, EventArgs e)
+        {
+            if (hesapListesi.SelectedIndex != -1 && sifre.Text != "")
+            {
+                string secilenKullanici = hesapListesi.SelectedItem.ToString();
+                string sifreDosyasi = secilenKullanici + "_sifre.txt";
+                string listeDosyasi = secilenKullanici + "_liste.txt";
+                bool sifreDogru = false;
+                if (File.Exists(sifreDosyasi))
+                {
+                    string[] kayitlar = File.ReadAllLines(sifreDosyasi);
+                    foreach (string kayit in kayitlar)
+                    {
+                        string[] parcalar = kayit.Split('|');
+                        if (parcalar.Length == 2 && parcalar[0] == secilenKullanici && parcalar[1] == sifre.Text)
+                        {
+                            sifreDogru = true;
+                            break;
+                        }
+                    }
+                }
+                if (sifreDogru)
+                {
+                    File.Delete(sifreDosyasi);
+                    if (File.Exists(listeDosyasi))
+                    {
+                        File.Delete(listeDosyasi);
+                    }
+                    MessageBox.Show("Hesap başarıyla silindi.");
+                    HesaplariListele();
+                }
+                else
+                {
+                    MessageBox.Show("Şifre yanlış. Hesap silinemedi.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen silmek istediğiniz hesabı seçiniz ve şifresini giriniz.");
             }
         }
     }

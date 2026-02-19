@@ -35,11 +35,13 @@
             this.giris = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.kayıt = new System.Windows.Forms.Button();
+            this.hesapListesi = new System.Windows.Forms.ComboBox();
+            this.hesapSil = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // kullaniciAdi
             // 
-            this.kullaniciAdi.Location = new System.Drawing.Point(113, 337);
+            this.kullaniciAdi.Location = new System.Drawing.Point(108, 229);
             this.kullaniciAdi.Name = "kullaniciAdi";
             this.kullaniciAdi.Size = new System.Drawing.Size(194, 22);
             this.kullaniciAdi.TabIndex = 0;
@@ -47,7 +49,7 @@
             // 
             // sifre
             // 
-            this.sifre.Location = new System.Drawing.Point(113, 365);
+            this.sifre.Location = new System.Drawing.Point(108, 257);
             this.sifre.Name = "sifre";
             this.sifre.Size = new System.Drawing.Size(194, 22);
             this.sifre.TabIndex = 1;
@@ -57,7 +59,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 340);
+            this.label1.Location = new System.Drawing.Point(23, 232);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 16);
             this.label1.TabIndex = 1;
@@ -66,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(73, 371);
+            this.label2.Location = new System.Drawing.Point(68, 263);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 16);
             this.label2.TabIndex = 1;
@@ -74,7 +76,7 @@
             // 
             // giris
             // 
-            this.giris.Location = new System.Drawing.Point(232, 393);
+            this.giris.Location = new System.Drawing.Point(227, 285);
             this.giris.Name = "giris";
             this.giris.Size = new System.Drawing.Size(75, 23);
             this.giris.TabIndex = 2;
@@ -85,7 +87,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(313, 367);
+            this.checkBox1.Location = new System.Drawing.Point(308, 259);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(103, 20);
             this.checkBox1.TabIndex = 3;
@@ -95,7 +97,7 @@
             // 
             // kayıt
             // 
-            this.kayıt.Location = new System.Drawing.Point(113, 393);
+            this.kayıt.Location = new System.Drawing.Point(108, 285);
             this.kayıt.Name = "kayıt";
             this.kayıt.Size = new System.Drawing.Size(75, 23);
             this.kayıt.TabIndex = 2;
@@ -103,11 +105,31 @@
             this.kayıt.UseVisualStyleBackColor = true;
             this.kayıt.Click += new System.EventHandler(this.kayitOl_Click);
             // 
+            // hesapListesi
+            // 
+            this.hesapListesi.FormattingEnabled = true;
+            this.hesapListesi.Location = new System.Drawing.Point(108, 314);
+            this.hesapListesi.Name = "hesapListesi";
+            this.hesapListesi.Size = new System.Drawing.Size(194, 24);
+            this.hesapListesi.TabIndex = 4;
+            // 
+            // hesapSil
+            // 
+            this.hesapSil.Location = new System.Drawing.Point(308, 315);
+            this.hesapSil.Name = "hesapSil";
+            this.hesapSil.Size = new System.Drawing.Size(75, 23);
+            this.hesapSil.TabIndex = 5;
+            this.hesapSil.Text = "Hesap Sil";
+            this.hesapSil.UseVisualStyleBackColor = true;
+            this.hesapSil.Click += new System.EventHandler(this.hesapSil_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 605);
+            this.Controls.Add(this.hesapSil);
+            this.Controls.Add(this.hesapListesi);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.kayıt);
             this.Controls.Add(this.giris);
@@ -131,5 +153,7 @@
         private System.Windows.Forms.Button giris;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button kayıt;
+        private System.Windows.Forms.ComboBox hesapListesi;
+        private System.Windows.Forms.Button hesapSil;
     }
 }
