@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.giris = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.kayıt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // kullaniciAdi
@@ -73,7 +74,7 @@
             // 
             // giris
             // 
-            this.giris.Location = new System.Drawing.Point(168, 393);
+            this.giris.Location = new System.Drawing.Point(232, 393);
             this.giris.Name = "giris";
             this.giris.Size = new System.Drawing.Size(75, 23);
             this.giris.TabIndex = 2;
@@ -92,12 +93,23 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // kayıt
+            // 
+            this.kayıt.Location = new System.Drawing.Point(113, 393);
+            this.kayıt.Name = "kayıt";
+            this.kayıt.Size = new System.Drawing.Size(75, 23);
+            this.kayıt.TabIndex = 2;
+            this.kayıt.Text = "Kayıt Ol";
+            this.kayıt.UseVisualStyleBackColor = true;
+            this.kayıt.Click += new System.EventHandler(this.kayitOl_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 605);
             this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.kayıt);
             this.Controls.Add(this.giris);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -118,5 +130,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button giris;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button kayıt;
     }
 }

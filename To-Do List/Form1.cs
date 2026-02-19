@@ -13,10 +13,12 @@ namespace To_Do_List
 {
     public partial class Form1 : Form
     {
-        string dosyayolu = "liste.txt";
-        public Form1()
+        string dosyayolu;
+        public Form1(string girenKullanici)
         {
             InitializeComponent();
+            dosyayolu = $"{girenKullanici}.txt";
+            this.Text = "To-Do List - Aktif Kullanıcı:" + girenKullanici;
             verileriyukle();
         }
         private void verilerikaydet()
