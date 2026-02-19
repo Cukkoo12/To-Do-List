@@ -34,5 +34,34 @@ namespace To_Do_List
                 kullaniciAdi.Focus();
             }
         }
+
+        private void sifre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                giris_Click(sender, e);
+            }
+        }
+
+        private void kullaniciAdi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) {
+                e.SuppressKeyPress = true;
+                giris_Click(sender, e);
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                sifre.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                sifre.UseSystemPasswordChar = true;
+            }
+        }
     }
 }
