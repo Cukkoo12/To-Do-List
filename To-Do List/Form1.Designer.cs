@@ -40,47 +40,67 @@
             // 
             // metin
             // 
-            this.metin.Location = new System.Drawing.Point(12, 358);
+            this.metin.Location = new System.Drawing.Point(14, 515);
+            this.metin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metin.Name = "metin";
-            this.metin.Size = new System.Drawing.Size(318, 22);
+            this.metin.Size = new System.Drawing.Size(357, 30);
             this.metin.TabIndex = 1;
             // 
             // ekle
             // 
-            this.ekle.Location = new System.Drawing.Point(12, 386);
+            this.ekle.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.ekle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ekle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ekle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ekle.ForeColor = System.Drawing.Color.White;
+            this.ekle.Location = new System.Drawing.Point(14, 555);
+            this.ekle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ekle.Name = "ekle";
-            this.ekle.Size = new System.Drawing.Size(131, 23);
+            this.ekle.Size = new System.Drawing.Size(147, 33);
             this.ekle.TabIndex = 2;
             this.ekle.Text = "Ekle";
-            this.ekle.UseVisualStyleBackColor = true;
+            this.ekle.UseVisualStyleBackColor = false;
             this.ekle.Click += new System.EventHandler(this.ekle_Click);
             // 
             // sil
             // 
-            this.sil.Location = new System.Drawing.Point(199, 386);
+            this.sil.BackColor = System.Drawing.Color.Crimson;
+            this.sil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sil.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sil.ForeColor = System.Drawing.Color.White;
+            this.sil.Location = new System.Drawing.Point(224, 555);
+            this.sil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sil.Name = "sil";
-            this.sil.Size = new System.Drawing.Size(131, 23);
+            this.sil.Size = new System.Drawing.Size(147, 33);
             this.sil.TabIndex = 2;
             this.sil.Text = "Sil";
-            this.sil.UseVisualStyleBackColor = true;
+            this.sil.UseVisualStyleBackColor = false;
             this.sil.Click += new System.EventHandler(this.sil_Click);
             // 
             // liste
             // 
             this.liste.FormattingEnabled = true;
-            this.liste.Location = new System.Drawing.Point(4, 12);
+            this.liste.Location = new System.Drawing.Point(4, 17);
+            this.liste.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.liste.Name = "liste";
-            this.liste.Size = new System.Drawing.Size(326, 344);
+            this.liste.Size = new System.Drawing.Size(366, 479);
             this.liste.TabIndex = 3;
             // 
             // temizle
             // 
-            this.temizle.Location = new System.Drawing.Point(100, 415);
+            this.temizle.BackColor = System.Drawing.Color.Goldenrod;
+            this.temizle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.temizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.temizle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.temizle.ForeColor = System.Drawing.Color.White;
+            this.temizle.Location = new System.Drawing.Point(112, 597);
+            this.temizle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.temizle.Name = "temizle";
-            this.temizle.Size = new System.Drawing.Size(130, 23);
+            this.temizle.Size = new System.Drawing.Size(146, 33);
             this.temizle.TabIndex = 4;
             this.temizle.Text = "Temizle";
-            this.temizle.UseVisualStyleBackColor = true;
+            this.temizle.UseVisualStyleBackColor = false;
             this.temizle.Click += new System.EventHandler(this.temizle_Click);
             // 
             // timer1
@@ -93,7 +113,7 @@
             // 
             this.saat.AutoSize = true;
             this.saat.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.saat.Location = new System.Drawing.Point(621, 9);
+            this.saat.Location = new System.Drawing.Point(699, 13);
             this.saat.Name = "saat";
             this.saat.Size = new System.Drawing.Size(91, 39);
             this.saat.TabIndex = 5;
@@ -101,15 +121,18 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.GrayText;
+            this.ClientSize = new System.Drawing.Size(900, 647);
             this.Controls.Add(this.saat);
             this.Controls.Add(this.temizle);
             this.Controls.Add(this.liste);
             this.Controls.Add(this.sil);
             this.Controls.Add(this.ekle);
             this.Controls.Add(this.metin);
+            this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
